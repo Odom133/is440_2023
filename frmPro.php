@@ -1,3 +1,12 @@
+
+<?php
+session_start();
+include 'cn.php'; 
+if(!isset($_SESSION['HelloABC'])){
+  header("location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -87,13 +96,12 @@
                   <label>Brand</label>
                   <select class="form-control select2bs4" style="width: 100%;">
                   <?php 
-                    // $sqlSBrand = "SELECT * FROM `tbl_brand`";
-                    // $qrSBrand = $conn->query($sqlSBrand);
+                    $sqlSBrand = "SELECT * FROM `tbl_brand`";
+                    $qrSBrand = $conn->query($sqlSBrand);
 
-                    // while($rowSBrand = $qrSBrand->fetch_assoc()){
-                    //   echo '<option value="'.$rowSBrand['b_id'].'">'.$rowSBrand['b_name'].'</option>';
-                    // }
-
+                    while($rowSBrand = $qrSBrand->fetch_assoc()){
+                      echo '<option value="'.$rowSBrand['b_id'].'">'.$rowSBrand['b_name'].'</option>';
+                    }
                   ?>
                   </select>
                 </div>
@@ -102,13 +110,15 @@
                 <div class="form-group">
                   <label>Type</label>
                   <select class="form-control select2bs4" style="width: 100%;">
-                    <option selected="selected">Alabama</option>
-                    <option>Alaska</option>
-                    <option disabled="disabled">California (disabled)</option>
-                    <option>Delaware</option>
-                    <option>Tennessee</option>
-                    <option>Texas</option>
-                    <option>Washington</option>
+                  <?php
+                    $sqlSType = "SELECT * FROM `tbl_type`";
+                    $qrSType = $conn->query($sqlSType);
+                    while($rowSType = $qrSType->fetch_assoc()){
+                      echo '<option value="'.$rowSType["type_id"].'">'.$rowSType['type_name'].'</option>';
+                    }
+
+                    ?>
+                  
                   </select>
                 </div>
                 <!-- /.form-group -->

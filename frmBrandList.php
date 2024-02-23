@@ -25,6 +25,7 @@ if(!isset($_SESSION['HelloABC'])){
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
+  
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -69,7 +70,7 @@ if(!isset($_SESSION['HelloABC'])){
                       <th style="width: 10px">#</th>
                       <th>Brand</th>
                       <th>Logo</th>
-                      <th style="width: 40px">Label</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -83,20 +84,18 @@ if(!isset($_SESSION['HelloABC'])){
                             <td>'.$i.'.</td>
                             <td>'.$rowBrandList['b_name'].'</td>
                             <td>
-                            <div class="progress progress-xs">
-                                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                            </div>
+                              <img style="height: 100px;" src="../images/'.$rowBrandList['b_logo'].'" />
                             </td>
                             <td>
-                                <a href="" class="btn btn-info btn-xs"> Update </a>
+                              <a href="#" class="btn btn-info btn-xs" > Udpate</a>
+                              <a href="#" class="btn btn-danger btn-xs" > Delete</a>
                             </td>
+                            
                         </tr>  
                         ';
                         $i++;
                     }
                     ?>
-                    
-                    
                   </tbody>
                 </table>
               </div>
@@ -112,16 +111,6 @@ if(!isset($_SESSION['HelloABC'])){
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.0.5
-    </div>
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
-    reserved.
-  </footer>
-
-  <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
